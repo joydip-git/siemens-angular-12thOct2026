@@ -1,3 +1,5 @@
+Roadmap to learn Angular:
+--------------------------
 JavaScript
 TypeScript
 Node JS
@@ -7,113 +9,7 @@ S/W:
 --------
 Node JS and NPM [C:\Program Files\nodejs]
 
-tool:
-----------
-Angular CLI -> @angular/cli
->npm uninstall @angular/cli --global
-
-C:\Users\<user-name>\AppData\Roaming\npm
 
 
-command to create angular app:
->ng new <app-name>
 
 
-Angular:
-----------------
-JS based front-end framework
-Single Page Application
-built using series of components
-angular promotes MVC architecture
-angular offers DI
-angular offers "binding" - data and event binding
-angular offers "piping" mechanism to transform data
-angular offers client-side routing
-
-footer.html
----------------
-<div>
-	<footer (click)="onClick(10)"><h3>{{companyName}}, 2026</h3></footer>
-</div>
-
-footer.ts
-----------------
-@angular/core
-
-@Component({
-	templateUrl:'./footer.html',
-	selector:'app-footer'
-})
-class Footer{
-	companyName = "siemens"
-
-	onClick(num:number){
-		//code	
-	}
-}
-
-
-header.html
------------------
-<h2>Welcome to angular</h2>
-
-header.ts
-----------------
-@Component({
-	selector:'app-header',
-	templateUrl:'./header.html'
-})
-class Header{
-}
-
-app.html
-----------------------
-<app-header></...>
-<br>
-<br>
-<app-footer></app-footer>
-
-
-app.ts
----------------
-@Component({
-	selector:'app-root',
-	templateUrl:'./app.html',
-	imports:[Header, Footer]
-})
-class App{
-}
-
-
-<html>
-......
-
-<body>
-	<app-root></app-root>
-</body>
-</html>
-
-{{title|uppercase}}
-{{price|currency:'USD':'2'}}
-@Pipe({
-	name:'uppercase'
-})
-class UpperCasePipe implements PipeTransform{
-	transform(value:string):string{
-		return value.toUpperCase()
-	}
-}
-@Pipe({
-	name:'currency'
-})
-class CurrencyPipe implements PipeTransform{
-	transform(value:string, ...args:any[]):string{
-		code....
-	}
-}
-
-
-component	class		@Component()
-service		class		@Service() -> optional
-pipe		class		@Pipe()
-directive	class		@Directive()
