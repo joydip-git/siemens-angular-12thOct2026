@@ -9,6 +9,65 @@ S/W:
 --------
 Node JS and NPM [C:\Program Files\nodejs]
 
+JavaScript:
+-------------------
+version: first -> 1.0 (1994)
+guidance language: ECMAScript
+
+ES3, ES4,ES5 
+
+2015:
+----------
+ES6 
+const, let
+class, constructor, super, extends
+rest operator, spread operator
+
+ES7:
+async, await
+....
+
+JS engine:
+------------
+chrome:  V8 engine (C++)
+edge:    chakra -> chromekit
+safari:  JSCore (indigo)
+firefox: Spidermonkey
+
+2009:
+------------------------------------------
+Ryan Dahl -> Node JS (V8 engine)
+
+
+data types:
+-----------------
+1. number
+2. string
+3. Boolean
+4. object
+
+var num = 12
+
+package.json -> dependencies info
+a. manual
+b. using npm
+	>npm init
+
+convert TS to JS:
+------------------------
+tool: TypeScript Compiler
+package: typescript
+command: >npm i typescript -D
+
+create TSC configuration file:
+------------------------------
+a. manual
+b. using TSC command
+	>./node_modules/.bin/tsc --init
+
+
+
+
 
 
 

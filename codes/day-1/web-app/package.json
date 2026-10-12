@@ -1,0 +1,11 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "simple js app",
+  "license": "ISC",
+  "author": "joydip",
+  "scripts": {},
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
