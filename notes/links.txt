@@ -1,3 +1,6 @@
-https://forms.gle/T1dvDsLWjCRf3zxd9
-
 https://github.com/joydip-git/siemens-angular-12thOct2026
+
+JS FEC:
+-------------
+https://dev.to/jahid6597/javascript-execution-context-a-deep-dive-4kno
+https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-javascript-execution-context/
