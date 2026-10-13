@@ -1,0 +1,35 @@
+<fieldset>
+    <legend>Calculator</legend>
+    <div>
+        <label for="radioAdd">Add: &nbsp;</label>
+        <input type="radio" name="calculation" id="radioAdd" (change)="choice.set(1)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="radioSubtract">Subtract: &nbsp;</label>
+        <input type="radio" name="calculation" id="radioSubtract" (change)="choice.set(2)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="radioMultiply">Multiply: &nbsp;</label>
+        <input type="radio" name="calculation" id="radioMultiply" (change)="choice.set(3)">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <label for="radioDivide">Divide: &nbsp;</label>
+        <input type="radio" name="calculation" id="radioDivide" (change)="choice.set(4)">
+    </div>
+    <div>
+        <label for="txtFirst">First: &nbsp;</label>
+        <input type="text" id="txtFirst" [value]="first()" (input)="first.set(+$event.target.value)">
+    </div>
+    <div>
+        <label for="txtSecond">Second: &nbsp;</label>
+        <input type="text" id="txtSecond" [value]="second()" (input)="second.set(+$event.target.value)">
+    </div>
+    <div>
+        <!-- <input type="button" value="Calculate" (click)="calculate()"> -->
+
+    </div>
+    <div>
+        <label for="txtResult">Result: &nbsp;</label>
+        <input type="text" id="txtResult" readonly [value]="result()">
+    </div>
+</fieldset>
