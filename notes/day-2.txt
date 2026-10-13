@@ -190,7 +190,28 @@ to change the value use
 	- update method: accepts a callback function. Updates the value of the signal based on its current value, and notify any dependents.
 
 read-only computed signal: created by calling "computed()" method
-this signal value depends on aother signal
+this signal value depends on another signal
+
+effect(): to register a side-effect causing code which depends on other signals.
+this code is executed asynchronously and at least runs once.
+it is like computed() as you need to pass a callback to the effect() method.
+but the difference is: the callback function of computed() method MUST return a value to be set to the computed signal, whereas the callback function passed to the effect() should not return anything.
+best practice: try to use computed() if your goal is to compute a value based on other signals, and use effect() for side effect causing code w.r.t. asynchronous operation
+
+
+sharing data between components:
+----------------------------------
+a. passing data from 
+	- parent to immediately nested: data binding
+	- nested back to the parent: event binding
+note: components are part of the same tree and "shallowly" nested
+
+b. passing data from
+	- parent to nested
+	- nested back to the parent
+note: components are part of the same tree and "deeply" nested
+
+c. when the components are in different component tree or they are routed component
 
 
 

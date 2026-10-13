@@ -22,3 +22,60 @@ Initial task: (binding)
 
 5. nest the ProductList component inside the App component
 6. run
+
+app structure:
+------------------
+app name: pms-app
+
+src (folder)
+	index.html
+	styles.css
+	main.ts
+
+	app (folder)
+
+		app.config.ts
+		app-routes.ts
+
+		modules (folder)
+
+			root (folder)
+				app.ts
+				app.html
+				app.css
+				app.spec.ts
+
+			products (folder)
+				models (folder)
+					product.ts (file with Product type)
+
+				repository (folder)
+					products.ts (array of Product)
+		
+							
+				components (folder)
+
+					product-container (folder)
+						product-container.ts
+						product-container.html
+						product-container.css
+						product-container.spec.ts
+
+					product-list (folder)
+						product-list.ts
+						product-list.html
+						product-list.css
+						product-list.spec.ts
+
+					filter-product (folder)
+						filter-product.ts
+						filter-product.css
+						filter-product.html
+						filter-product.spec.ts
+			
+				pipes (folder)
+					product-filter-pipe.ts
+					product-filter-pipe.spec.ts
+
+
+

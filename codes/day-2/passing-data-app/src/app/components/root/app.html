@@ -1,0 +1,8 @@
+<h2>Parent Component</h2>
+<br>
+<span>Value in parent: &nbsp;{{name()}}</span>
+<br>
+<br>
+<app-nested [nameValue]="name()" (nameValueChanged)="updateName($event)">
+
+</app-nested>
