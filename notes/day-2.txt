@@ -161,3 +161,24 @@ export class CurrencyPipe implements PipeTransform{
 	}
 }
 
+
+Binding:
+--------------------
+passing data from 
+	- code of the component to the template of the same component: data binding
+	syntax: 
+	a. interpolation: {{property-name-of-the-component}}
+	b. property binding: <tag [attr]="property-name-of-the-component">
+
+	- template of the component to the code of the same component: event binding
+	syntax:
+	<tag (event-nane)="method-of-the-component(args)">
+
+Change detection:
+-----------------------
+Zone.js -> library
+
+
+
+
+

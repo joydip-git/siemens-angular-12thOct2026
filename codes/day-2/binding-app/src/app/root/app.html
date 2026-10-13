@@ -1,0 +1,7 @@
+<h2>{{title()}}</h2>
+<br>
+<div>
+  <label for="txtTitle">Title: &nbsp;</label>
+  <!-- <input type="text" id="txtTitle" [value]="title" [style.width.px]="width" (input)="updateTitle($event.target.value)"> -->
+  <input type="text" id="txtTitle" [value]="title()" [style.width.px]="width" (input)="title.set($event.target.value)">
+</div>
