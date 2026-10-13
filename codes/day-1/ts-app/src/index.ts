@@ -71,14 +71,17 @@ console.log(add.prototype);
 */
 
 class Person {
-    private _id: number;
-    private _name: string;
-    private _salary: number;
+    // private _id: number;
+    // private _name: string;
+    // private _salary: number;
 
-    constructor(idValue: number, namevalue: string, salaryValue: number) {
-        this._id = idValue
-        this._name = namevalue
-        this._salary = salaryValue
+    // constructor(_id: number, _name: string, _salary: number) {
+    //     this._id = _id
+    //     this._name = _name
+    //     this._salary = _salary
+    // }
+    constructor(private _id: number, private _name: string, private _salary: number) {
+        
     }
     get id() {
         return this._id
@@ -86,16 +89,16 @@ class Person {
     set id(value: number) {
         this._id = value
     }
-    public get name(): string {
+    get name(): string {
         return this._name;
     }
-    public set name(value: string) {
+    set name(value: string) {
         this._name = value;
     }
-    public get salary(): number {
+    get salary(): number {
         return this._salary;
     }
-    public set salary(value: number) {
+    set salary(value: number) {
         this._salary = value;
     }
 
@@ -105,11 +108,11 @@ class Person {
 }
 
 class Trainer extends Person {
-    private _subject: string;
+    //private _subject: string;
 
-    constructor(idValue: number, namevalue: string, salaryValue: number, subjectValue: string) {
+    constructor(idValue: number, namevalue: string, salaryValue: number, private _subject: string) {
         super(idValue, namevalue, salaryValue)
-        this._subject = subjectValue
+        //this._subject = subjectValue
     }
     public get subject(): string {
         return this._subject;
