@@ -5,3 +5,27 @@
   <!-- <input type="text" id="txtTitle" [value]="title" [style.width.px]="width" (input)="updateTitle($event.target.value)"> -->
   <input type="text" id="txtTitle" [value]="title()" [style.width.px]="width" (input)="title.set($event.target.value)">
 </div>
+
+<br>
+<br>
+<div>
+  <span>Count: &nbsp;{{count()}}</span>
+  <br>
+  <span>Doubled Count: &nbsp;{{doubleCount()}}</span>
+  <br>
+  <button type="button" (click)="increase()">Increase</button>
+</div>
+<br><br>
+<div>
+  <label for="txtName">Filter By: &nbsp;</label>
+  <input type="text" id="txtName" [value]="filterText()" (input)="filterText.set($event.target.value)">
+</div>
+@if (filteredNames().length>0) {
+<ul>
+  @for (name of filteredNames(); track $index) {
+  <li>{{name}}</li>
+  }
+</ul>
+}@else {
+  <span>no names</span>
+}

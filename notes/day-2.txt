@@ -174,9 +174,28 @@ passing data from
 	syntax:
 	<tag (event-nane)="method-of-the-component(args)">
 
-Change detection:
------------------------
+Change detection and Signal:
+-------------------------------
 Zone.js -> library
+
+Signal -> an object to which you can subscribe to get the data stored in it
+signal informs angular app, precisely which property has been updated in which component, accordingly angular updates the corresponding template binding
+
+types of signal: read-write and read-only
+
+WritableSignal -> read-write signal
+created by calling the "signal()" method
+to change the value use
+	- set method: accepts the new value
+	- update method: accepts a callback function. Updates the value of the signal based on its current value, and notify any dependents.
+
+read-only computed signal: created by calling "computed()" method
+this signal value depends on aother signal
+
+
+
+
+
 
 
 
