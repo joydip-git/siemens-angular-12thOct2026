@@ -29,4 +29,112 @@ export class NgClass{
 }
 
 
+Services and Dependency Injection:
+-------------------------------------------------
+to write common business, data access logic 
+service can be used to share data across components or to ther services
+
+1. create service
+simply create a class with methods with reusable logic
+** use @Service decorator optionally with the class
+
+2. register service provider
+-----------------------------------
+this is an object which is used to register a provider for the service. it informs angular about service metadata, based on which the object of the service is created and maintained in a container
+
+provider built-in type: Provider
+child types: ClassProvider, ValueProvider and FactoryProvider
+
+a. when you want to use the class itself as the token
+----------------------------------------------------------
+
+provider object:
+const provider = {
+	provide:  DataService,
+	useClass: DataService
+}
+
+registration:
+
+providers:[provider] (at the component or root level)
+
+or
+
+providers:[DataService] (at the component or root level)
+
+or
+
+@Service() <- (at the root level)
+export class DataService{
+}
+
+Note: if you want to register DataService at the root level and want to use the class itself as token you can add @Service decorator at the top of the service class itself. that decorator will help to register the service at the root level with token name same as that of the service itself.
+
+b. where token name is NOT class (not using class as token) but a string
+------------------------------------------------------------------------
+provider object:
+
+const TOKEN = 'TOKEN'
+const provider = {
+	provide:  TOKEN,
+	useClass: DataService
+}
+or 
+const provider = {
+	provide:  TOKEN,
+	useFactory: ()=> new DataService()
+}
+
+c. where token name is NOT class (not using class as token) but an InjectionToken object
+------------------------------------------------------------------------
+provider object:
+const TOKEN = new InjectionToken<DataService>('TOKEN')
+const provider = {
+	provide:  TOKEN,
+	useClass: DataService
+}
+or 
+const provider = {
+	provide:  TOKEN,
+	useFactory: ()=> new DataService()
+}
+
+
+
+
+3. consume service
+------------------------
+
+a. when you want to use the class itself as the token
+----------------------------------------------------------
+private ds:DataService;
+constructor(ds:DataService){
+	this.da = ds
+}
+
+or
+ private ds = inject(DataService)
+
+b. where token name is NOT class (not using class as token) but a string
+------------------------------------------------------------------------
+private ds:DataService;
+constructor(@Inject(TOKEN) ds:DataService){
+	this.da = ds
+}
+
+**not possible to use inject method when the token is a string value
+// private ds = inject(DataService)
+
+c. where token name is NOT class (not using class as token) but an InjectionToken object
+------------------------------------------------------------------------
+private ds:DataService;
+constructor(@Inject(TOKEN) ds:DataService){
+	this.da = ds
+}
+
+
+or
+private ds = inject(TOKEN)
+
+
 
