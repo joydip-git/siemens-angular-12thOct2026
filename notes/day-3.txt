@@ -137,4 +137,23 @@ or
 private ds = inject(TOKEN)
 
 
+HTTP requests:
+-----------------------
+package: @angular/common/http
+built-in service: HttpClient
+provider: provideHttpClient() -> call this method to register the HttpClient class provider. the provider for HttpClient class is automatically provided with Angular app (nowadays). you need to call this method to "enhance" the HttpClient with extra features (registering interceptors etc.)
+
+methods:
+	- get
+	- post
+	- delete
+	- put
+	- patch
+	- options
+	etc.
+
+all the methods return an Observable type object to store the response from server in the near future
+
+
+
 

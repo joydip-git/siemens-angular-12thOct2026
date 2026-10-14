@@ -1,0 +1,18 @@
+@if(!isRequestOver()){
+<span>Loading...</span>
+}@else if (errorInfo()!=='') {
+<span>{{errorInfo()}}</span>
+}@else if (todos().length===0) {
+<span>no recoeds</span>
+}@else {
+<ul>
+    @for(todo of todos();track todo.id){
+    <li>
+        <u>
+            {{todo.title}}&nbsp;
+            <input type="checkbox" name="" id="" [checked]="todo.completed">
+        </u>
+    </li>
+    }
+</ul>
+}
