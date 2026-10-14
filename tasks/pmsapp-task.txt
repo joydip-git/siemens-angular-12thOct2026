@@ -23,6 +23,15 @@ Initial task: (binding)
 5. nest the ProductList component inside the App component
 6. run
 
+enhancement-1:
+-------------------------
+create another component FilterProduct in "src/app/modules/products/components" directory
+it will supply the filter text typed in a textbox of its template to ProductList component via ProductContainer (parent component), so that the products can be filtered by product name.
+
+add a file (product-filter-pipe.ts) in the "src/app/modules/products/pipes" directory to create a custom pipe: ProductFilter. 
+This custom pipe will be used to filter the products in the ProductList component template, by the filter text, as received through an input decorated property, from FilterProduct component.
+
+
 app structure:
 ------------------
 app name: pms-app
