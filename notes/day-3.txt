@@ -1,0 +1,32 @@
+directives:
+-----------------
+a. attribute directive:
+------------------------------ 
+ngClass, ngStyle, formGroup, formElement etc.
+use this as custom attribute
+to extend the behavior of existing elements
+they are NOT used with any special character in the template
+
+b. structural directive
+------------------------------
+*ngIf, *ngIf, *ngFor, *ngSwitch
+use this as custom attribute
+manipulate DOM
+they are used with * in the template
+
+are being replaced with @if, @else, @for, @switch etc.
+
+c. componeht directive or Component
+------------------------------------------
+use this as custom HTML tag
+decorated with @Component() decorator
+
+@Directive({
+	selector:'[ngClass]'
+})
+export class NgClass{
+	
+}
+
+
+
