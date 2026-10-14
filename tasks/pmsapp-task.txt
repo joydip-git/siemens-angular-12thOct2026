@@ -42,7 +42,10 @@ create a ProductService class in that and implement the interface and the method
 	- getAll -> the method does not have any arguments but returns an array of Product objects (the sample data)
 
 Do not use @Service() decorator with the class
-create and register a custom provider (using InjectionToken) in the "conatsnts.ts" file in "src/app/config" folder
+
+create and register a custom provider (using InjectionToken) in the "constants.ts" file in "src/app/config" folder
+
+register the provider at the root level
 
 consume the service in ProductList component either through constructor or using inject() method (preferred) and use loose coupling through interface ServiceContract
 
