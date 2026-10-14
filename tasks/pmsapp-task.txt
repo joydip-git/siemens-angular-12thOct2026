@@ -31,6 +31,21 @@ it will supply the filter text typed in a textbox of its template to ProductList
 add a file (product-filter-pipe.ts) in the "src/app/modules/products/pipes" directory to create a custom pipe: ProductFilter. 
 This custom pipe will be used to filter the products in the ProductList component template, by the filter text, as received through an input decorated property, from FilterProduct component.
 
+enhancement-2:
+-----------------------
+create a folder "services" in "src/app/modules/products" directory
+
+create an interface "ServiceContract" for the following service (in service-contact.ts file) with a method "getAll()" which returns an array of Product objects and does not accept any parameter.
+
+add a file "product-service.ts" in the "services" folder
+create a ProductService class in that and implement the interface and the method
+	- getAll -> the method does not have any arguments but returns an array of Product objects (the sample data)
+
+Do not use @Service() decorator with the class
+create and register a custom provider (using InjectionToken) in the "conatsnts.ts" file in "src/app/config" folder
+
+consume the service in ProductList component either through constructor or using inject() method (preferred) and use loose coupling through interface ServiceContract
+
 
 app structure:
 ------------------
@@ -39,22 +54,34 @@ app name: pms-app
 src (folder)
 	index.html
 	styles.css
+	app-theme.css
 	main.ts
+
 
 	app (folder)
 
 		app.config.ts
 		app-routes.ts
 
+		config (folder)
+			constants.ts
+
 		modules (folder)
 
 			root (folder)
-				app.ts
-				app.html
-				app.css
-				app.spec.ts
+				components (folder)
+					app (folder)
+						app.ts
+						app.html
+						app.css
+						app.spec.ts
 
 			products (folder)
+				services
+					service-contract.ts
+					product-service.ts
+					product-service.spec.ts
+
 				models (folder)
 					product.ts (file with Product type)
 
