@@ -7,7 +7,7 @@
 }@else {
 <ul>
     @for(todo of todos();track todo.id){
-    <li>
+    <li (click)="selectedTodoId.set(todo.id)">
         <u>
             {{todo.title}}&nbsp;
             <input type="checkbox" name="" id="" [checked]="todo.completed">
@@ -15,4 +15,10 @@
     </li>
     }
 </ul>
+}
+<br>
+@if(selectedTodoId()>0){
+<app-todo-info [todoId]="selectedTodoId()"></app-todo-info>
+}@else {
+    <span>select a title to view the details</span>
 }

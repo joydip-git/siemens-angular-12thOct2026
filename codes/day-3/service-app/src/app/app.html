@@ -3,4 +3,8 @@
 </h2>
 <br>
 <br>
+<button type="button" (click)="show.update(prev=>!prev)">{{show()?'Hide':'Show'}}</button>
+<br>
+@if(show()){
 <app-todo-list></app-todo-list>
+}

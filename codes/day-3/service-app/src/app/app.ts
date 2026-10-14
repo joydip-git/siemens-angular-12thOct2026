@@ -13,6 +13,7 @@ import { TodoList } from './todo-list/todo-list';
 })
 export class App {
 
+  show = signal(false)
   //private ds: DataService;
   //data = ''
   // constructor(ds: DataService) {

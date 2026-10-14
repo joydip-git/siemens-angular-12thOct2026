@@ -1,0 +1,19 @@
+@if(!isRequestOver()){
+<span>Loading...</span>
+}@else if (errorInfo()!=='') {
+<span>{{errorInfo()}}</span>
+}@else if(todo()==null){
+<span>no record</span>
+}@else {
+Task: &nbsp;
+<span>{{todo()?.title}}</span>
+<br>
+Id: &nbsp;
+<span>{{todo()?.id}}</span>
+<br>
+Assigned To: &nbsp;
+<span>{{todo()?.userId}}</span>
+<br>
+Status: &nbsp;
+<span>{{todo()?.completed?'done':'pending'}}</span>
+}

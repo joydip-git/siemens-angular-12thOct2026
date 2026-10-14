@@ -155,5 +155,46 @@ methods:
 all the methods return an Observable type object to store the response from server in the near future
 
 
+Lifecycle:
+----------------
+changes
+init
+destroy
+
+1. mounting:
+---------------
+field initialization
+constructor called
+input from parent component is received (if there is any)
+	changes - event gets fired
+	init - event gets fired
+
+component is rendered in the browser
+
+2. update
+---------------
+component receives fresh updated data via input property (if any)
+	changes - event gets fired
+
+3. destroy/unmounting
+-----------------------------
+parent gets destroyed
+conditionally unmounted
+navigate away from the route
+
+	destroy - gets fired
+
+event		interface	method/handlers
+-----------------------------------------------------
+X		OnX		ngOnX
+changes		OnChanges	ngOnChanges
+init		OnInit		ngOnInit
+destroy		OnDestroy	ngOnDestroy
+
+		
+
+
+
+
 
 
