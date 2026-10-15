@@ -1,0 +1,15 @@
+@if(!isRequestOver()){
+<span>Loading...</span>
+}@else if(errorMessage()!==''){
+<span>{{errorMessage()}}</span>
+}@else if(posts().length===0){
+<span>No records found</span>
+}@else {
+<h2>List of Posts</h2>
+<hr>
+<ol>
+    @for (post of posts(); track $index) {
+    <li>{{post.title}}</li>
+    }
+</ol>
+}

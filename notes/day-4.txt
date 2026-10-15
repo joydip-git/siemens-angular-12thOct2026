@@ -1,0 +1,3 @@
+effect():
+---------------
+Registers an "effect" that will be scheduled & executed whenever the signals that it reads changes.
