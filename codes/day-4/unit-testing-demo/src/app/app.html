@@ -1,0 +1,13 @@
+<h2>{{title()}}</h2>
+<div>
+  <label for="txtTitle">Title:&nbsp;</label>
+  <input type="text" id="txtTitle" [value]="title()" (input)="updateTitle($event.target.value)">
+</div>
+
+<br>
+<br>
+<ul>
+  @for (todo of todos(); track $index) {
+  <li>{{todo.title}}</li>
+  }
+</ul>

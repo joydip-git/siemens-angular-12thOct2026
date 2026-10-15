@@ -1,3 +1,29 @@
 effect():
 ---------------
 Registers an "effect" that will be scheduled & executed whenever the signals that it reads changes.
+
+unit testing
+-----------------
+karma -> unit test runner
+jasmine -> unit testing framework
+
+now: vitest
+
+
+var header = document.createElement('h2')
+header.innerHTML = title()
+
++
+
+function App(){
+	this.title = signal('')
+}
+
+new App()
+
+
+Karma Jasmine:
+------------------
+packages:
+
+npm install --save-dev karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter jasmine-core @types/jasmine istanbul-lib-instrument
