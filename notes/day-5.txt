@@ -32,7 +32,7 @@ pms-app routing plan:
 -----------------------------------------------
 products: [modules -> products-> components]
 	/products		ProductContainer (ProductList + FilterProduct)
-	/products/view/:id	ProductDetail
+	/products/view/:x	ProductDetail {x:'2'}
 	/products/edit		EditProduct	
 	/products/add		AddProduct
 	
@@ -44,6 +44,17 @@ shared: [modules -> shared-> components]
 	/home			Home
 	/ -> /home		Home
 	/anything-else		PageNotFound
+
+
+<element routerLink="/path-part1/path-part2">
+<element [routerLink]="['/path-part1', 'path-part-2']">
+
+guards:
+---------
+CanActivate/CanActivateFn
+CanDeactivate/CanDeactivateFn
+CanActivateChild/CanActivateChildFn
+CanMatch/CanMatchFn
 
 			
 		

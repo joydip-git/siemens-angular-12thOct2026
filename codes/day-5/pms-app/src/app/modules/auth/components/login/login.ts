@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './login.css',
   templateUrl: './login.html',
 })
-export class Login {}
+export class Login {
+  username = signal('')
+  password = signal('')
+
+  login() {
+    
+  }
+}
