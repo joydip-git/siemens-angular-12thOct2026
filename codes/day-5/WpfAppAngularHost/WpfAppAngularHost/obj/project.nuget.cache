@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "A+qlV27Rl2Q=",
+  "success": true,
+  "projectFilePath": "E:\\trainings\\siemens-angular-12thOct2026\\codes\\day-5\\WpfAppAngularHost\\WpfAppAngularHost\\WpfAppAngularHost.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\joydi\\.nuget\\packages\\microsoft.web.webview2\\1.0.4258.31\\microsoft.web.webview2.1.0.4258.31.nupkg.sha512"
+  ],
+  "logs": []
+}
