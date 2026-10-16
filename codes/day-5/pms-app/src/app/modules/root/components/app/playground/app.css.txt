@@ -1,0 +1,31 @@
+/* element selctor */
+/* h2{
+    background-color: burlywood;
+} */
+
+/* id selector */
+/* #main{
+    background-color: burlywood;
+} */
+
+/* class selector */
+
+.box-style {
+    background-color: burlywood;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: burlywood;
+    border-style: solid;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.alt-box-style {
+    background-color: limegreen;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: limegreen;
+    border-style: double;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}

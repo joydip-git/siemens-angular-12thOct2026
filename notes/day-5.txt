@@ -1,0 +1,55 @@
+Routing
+Form Data Handling
+Auth
+WebView2
+
+Routing:
+------------------
+package: @angular/router
+
+built-in:
+	types: Route, Routes
+
+	services: Router, ActivatedRouteSnapshot, RouterSnapshot
+	provider: provideRouter(routes)
+
+	component directives: router-outlet (RouterOutlet)
+
+type Routes: Route[]=[]
+
+const routes:Routes=[
+	{
+		path:'products'
+		component: ProductConatiner
+	}
+]
+
+pms-app routing plan:
+--------------------------
+
+
+	url			component
+-----------------------------------------------
+products: [modules -> products-> components]
+	/products		ProductContainer (ProductList + FilterProduct)
+	/products/view/:id	ProductDetail
+	/products/edit		EditProduct	
+	/products/add		AddProduct
+	
+auth: [modules -> auth -> components]
+	/auth/register		Registration
+	/auth/login		LogIn
+
+shared: [modules -> shared-> components]
+	/home			Home
+	/ -> /home		Home
+	/anything-else		PageNotFound
+
+			
+		
+
+
+
+
+
+

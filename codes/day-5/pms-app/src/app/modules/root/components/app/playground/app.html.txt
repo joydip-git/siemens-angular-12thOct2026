@@ -1,0 +1,22 @@
+<!-- <h2 id="main" [ngClass]="toogle()?'box-style':'alt-box-style'"> -->
+<h2 id="main" [class]="toogle()?'box-style':'alt-box-style'">
+  Product Management System
+</h2>
+<button type="button" (click)="toogle.update((prev)=>!prev)"> toggle</button>
+
+<br>
+<br>
+<!-- <ul *ngIf="names().length>0">
+  <li *ngFor="let name of names()">
+    {{name}}
+  </li>
+</ul> -->
+@if(names().length>0){
+<ul>
+  @for(name of names();track $index){
+  <li>
+    {{name}}
+  </li>
+  }
+</ul>
+}
