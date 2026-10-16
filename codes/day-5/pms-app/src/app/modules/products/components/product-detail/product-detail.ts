@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Product } from '../../models/product';
 import { LoadingSpinner } from '../../../shared/components/loading-spinner/loading-spinner';
 import { CurrencyPipe } from '@angular/common';
+import { ProductStorageService } from '../../services/product-storage-service';
 
 @Component({
   imports: [LoadingSpinner, RouterLink, CurrencyPipe],
@@ -14,6 +15,7 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ProductDetail implements OnInit, OnDestroy {
 
+  private storageSvc = inject(ProductStorageService)
   private router = inject(Router)
   private currentRouteInfo = inject(ActivatedRoute)
   private ps = inject(PRODUCT_SERVICE_TOKEN)
@@ -26,7 +28,12 @@ export class ProductDetail implements OnInit, OnDestroy {
   gotToEdit() {
     const p = this.product()
     if (p) {
-      this.router.navigate(['/product/edit'])
+      this.storageSvc.publish(p)
+      this.router.navigate(
+        ['/products/edit'],
+        {
+          queryParams: { id: p.productId }
+        })
     }
   }
 
