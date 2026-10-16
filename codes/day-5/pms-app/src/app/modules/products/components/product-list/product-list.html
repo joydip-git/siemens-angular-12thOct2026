@@ -22,7 +22,8 @@
         @for (p of products()|productfilter:filterText(); track $index) {
         <tr>
             <td>
-                <img class="img-box" [src]="p.imageUrl" alt="NA" [title]="p.productName">
+                <img class="img-box" [src]="p.imageUrl" alt="NA" [title]="p.productName"
+                    [routerLink]="['/products','view', p.productId]">
             </td>
             <td>{{p.productName|uppercase}}</td>
             <td>{{p.price|currency:'INR'}}</td>

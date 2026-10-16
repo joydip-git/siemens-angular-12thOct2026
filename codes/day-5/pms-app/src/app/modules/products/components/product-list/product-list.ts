@@ -6,9 +6,10 @@ import { ServiceContract } from '../../services/service-contract';
 import { PRODUCT_SERVICE_TOKEN } from '../../../../config/constants';
 import { Subscription } from 'rxjs';
 import { LoadingSpinner } from '../../../shared/components/loading-spinner/loading-spinner';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [CurrencyPipe, UpperCasePipe, ProductFilterPipe, LoadingSpinner],
+  imports: [CurrencyPipe, UpperCasePipe, ProductFilterPipe, LoadingSpinner, RouterLink],
   selector: 'app-product-list',
   styleUrl: './product-list.css',
   templateUrl: './product-list.html',
