@@ -1,1 +1,52 @@
-<p>product-detail works!</p>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading large-font">
+            Details of: &nbsp;
+            <a class="btn btn-primary edit-btn">
+                Edit
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">Name:&nbsp;</div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Code:&nbsp;</div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Description:&nbsp;</div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Availability:&nbsp;</div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Price:&nbsp;</div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">Rating:&nbsp;</div>
+                    <div class="col-md-6">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="center-block img-responsive" [style.width.px]="200" alt="NA">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button routerLink="/products" class="btn btn-primary back-btn" type="button">
+            <i class="bi bi-arrow-left-square"></i>
+            &nbsp;&nbsp;
+            Back
+        </button>
+    </div>
+    }

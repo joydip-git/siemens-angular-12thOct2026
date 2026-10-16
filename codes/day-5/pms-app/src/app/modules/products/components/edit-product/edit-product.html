@@ -1,1 +1,77 @@
-<p>edit-product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-6-offest-3">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Update Form: </legend>
+                    <div class="form-group">
+                        <label for="productId" class="form-label mt-4">
+                            Id:
+                        </label>
+                        <input type="number" id="productId" class="form-control" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productName" class="form-label mt-4">
+                            Name:
+                        </label>
+                        <input type="text" id="productName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCode" class="form-label mt-4">
+                            Code:
+                        </label>
+                        <input type="text" id="productCode" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="form-label mt-4">
+                            Description:
+                        </label>
+                        <textarea id="description" class="form-control">
+                        </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="releaseDate" class="form-label mt-4">
+                            Released On:
+                        </label>
+                        <input type="date" id="releaseDate" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price" class="form-label mt-4">
+                            Price:
+                        </label>
+                        <input type="number" id="price" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starRating" class="form-label mt-4">
+                            Rating:
+                        </label>
+                        <input type="number" id="starRating" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUrl" class="form-label mt-4">
+                            URL:
+                        </label>
+                        <input type="text" id="imageUrl" class="form-control">
+                    </div>
+                    <br>
+                    <div class="container-fluid btn-center">
+                        <button type="submit" class="btn btn-primary">
+                            Edit
+                        </button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-danger">
+                            Cancel
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
