@@ -1,16 +1,20 @@
 import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Params } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Params, Router, RouterLink } from '@angular/router';
 import { PRODUCT_SERVICE_TOKEN } from '../../../../config/constants';
 import { Subscription } from 'rxjs';
 import { Product } from '../../models/product';
+import { LoadingSpinner } from '../../../shared/components/loading-spinner/loading-spinner';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [LoadingSpinner, RouterLink, CurrencyPipe],
   selector: 'app-product-detail',
   styleUrl: './product-detail.css',
   templateUrl: './product-detail.html',
 })
 export class ProductDetail implements OnInit, OnDestroy {
+
+  private router = inject(Router)
   private currentRouteInfo = inject(ActivatedRoute)
   private ps = inject(PRODUCT_SERVICE_TOKEN)
   private fetchSubscription?: Subscription;
@@ -19,11 +23,18 @@ export class ProductDetail implements OnInit, OnDestroy {
   errorInfo = signal('')
   product = signal<Product | undefined>(undefined)
 
+  gotToEdit() {
+    const p = this.product()
+    if (p) {
+      this.router.navigate(['/product/edit'])
+    }
+  }
+
   ngOnInit(): void {
     const currentRouteState: ActivatedRouteSnapshot = this.currentRouteInfo.snapshot;
     const params: Params = currentRouteState.params;
     const id = Number(params['id'])
-   
+
     this.fetchSubscription = this.ps.get(id).subscribe({
       next: (apiReponse) => {
         if (apiReponse.data !== null) {

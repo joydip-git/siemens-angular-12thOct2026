@@ -1,8 +1,15 @@
+@if(!isLoadingOver()){
+<app-loading-spinner loadingText="Loading Product Info...."></app-loading-spinner>
+}@else if(errorInfo()!==''){
+<span>{{errorInfo()}}</span>
+}@else if(!product()){
+<span>No record found</span>
+}@else{
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading large-font">
-            Details of: &nbsp;
-            <a class="btn btn-primary edit-btn">
+            Details of: &nbsp; {{product()?.productName}}
+            <a class="btn btn-primary edit-btn" style="float: right;" (click)="gotToEdit()">
                 Edit
             </a>
         </div>
@@ -13,32 +20,33 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-3">Name:&nbsp;</div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">{{product()?.productName}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Code:&nbsp;</div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">{{product()?.productCode}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Description:&nbsp;</div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">{{product()?.description}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Availability:&nbsp;</div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">{{product()?.releaseDate}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Price:&nbsp;</div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">{{product()?.price|currency:'INR'}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">Rating:&nbsp;</div>
                     <div class="col-md-6">
+                        {{product()?.starRating}}
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <img class="center-block img-responsive" [style.width.px]="200" alt="NA">
+                <img class="center-block img-responsive" [style.width.px]="200" alt="NA" [src]="product()?.imageUrl">
             </div>
         </div>
     </div>
@@ -50,3 +58,4 @@
         </button>
     </div>
 </div>
+}
